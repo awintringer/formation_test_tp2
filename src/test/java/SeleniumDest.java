@@ -1,0 +1,64 @@
+import junit.framework.Assert;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.concurrent.TimeUnit;
+
+public class SeleniumDest
+{
+    WebDriver driver;
+
+    @Before
+    public void setup()
+    {
+        driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.get("https://google.com");
+    }
+
+    @After
+    public void exit()
+    {
+        driver.quit();
+    }
+
+    @Test
+    public void testEnter() throws InterruptedException
+    {
+        WebElement recherche = driver.findElement(By.id("lst-ib"));
+        recherche.sendKeys("canelé" + Keys.ENTER);
+        WebElement premierResultat = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div[2]/div/div/h3/a"));
+        Assert.assertEquals(premierResultat.getText(), "Canelé — Wikipédia");
+    }
+
+
+    @Test
+    public void testClick() throws InterruptedException
+    {
+        WebElement recherche = driver.findElement(By.id("lst-ib"));
+        recherche.sendKeys("canelé");
+        recherche = driver.findElement(By.className("lsb"));
+        recherche.click();
+        WebElement premierResultat = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div[2]/div/div/h3/a"));
+        Assert.assertEquals(premierResultat.getText(), "Canelé — Wikipédia");
+    }
+
+    @Test
+    public void testEnterBonobo() throws InterruptedException
+    {
+        WebElement recherche = driver.findElement(By.id("lst-ib"));
+        recherche.sendKeys("reproduction des bonobos" + Keys.ENTER);
+    }
+
+
+
+
+
+}
