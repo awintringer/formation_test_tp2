@@ -36,7 +36,7 @@ public class SeleniumDest
         WebElement recherche = driver.findElement(By.id("lst-ib"));
         recherche.sendKeys("france" + Keys.ENTER);
         WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
-        Assert.assertEquals(premierResultat.getText(), "France - Wikipedia");
+        Assert.assertEquals("République française - France — Wikipédia",premierResultat.getText());
     }
 
 
@@ -48,7 +48,7 @@ public class SeleniumDest
         recherche = driver.findElement(By.className("lsb"));
         recherche.click();
         WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
-        Assert.assertEquals(premierResultat.getText(), "France - Wikipedia");
+        Assert.assertEquals("République française - France — Wikipédia", premierResultat.getText() );
     }
 
     @Test
