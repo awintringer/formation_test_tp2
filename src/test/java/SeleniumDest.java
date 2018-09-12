@@ -9,11 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumDest
 {
-    System.setProperty( "file.encoding", "UTF-8" );
+
     WebDriver driver;
 
     @Before
