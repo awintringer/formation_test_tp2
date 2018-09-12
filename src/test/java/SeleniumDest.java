@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SeleniumDest
 {
+    System.setProperty( "file.encoding", "UTF-8" );
     WebDriver driver;
 
     @Before
