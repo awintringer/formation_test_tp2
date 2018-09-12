@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class SeleniumDest
 {
-
     WebDriver driver;
 
     @Before
@@ -35,7 +34,7 @@ public class SeleniumDest
     public void testEnter() throws InterruptedException
     {
         WebElement recherche = driver.findElement(By.id("lst-ib"));
-        recherche.sendKeys("canelé" + Keys.ENTER);
+        recherche.sendKeys("turlututu" + Keys.ENTER);
         WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
         Assert.assertEquals(premierResultat.getText(), "Recette de Canelés Bordelais rapides : la recette facile");
     }
