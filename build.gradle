@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'onche'
+group 'automatisation'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
@@ -13,9 +13,9 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version : '3.14.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.14.0'
 }
 
 tasks.withType(Test){
-    systemProperties 'browser' , System.getProperty('browser')
+    systemProperty 'browser', System.getProperty('browser')
 }
