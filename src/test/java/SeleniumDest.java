@@ -19,7 +19,15 @@ public class SeleniumDest
     @Before
     public void setup()
     {
-        driver = new ChromeDriver();
+        String browser = System.getProperty("browser");
+
+        //choix navigateur
+        if (browser==null || browser=="chrome")
+            driver = new ChromeDriver();
+        else if (browser.equals("firefox"))
+            driver = new FirefoxDriver();
+        else driver = new ChromeDriver();
+
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://google.com");
     }
