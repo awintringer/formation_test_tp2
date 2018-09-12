@@ -18,7 +18,7 @@ public class SeleniumDest
     @Before
     public void setup()
     {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://google.com");
     }
