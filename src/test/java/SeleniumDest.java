@@ -34,9 +34,9 @@ public class SeleniumDest
     public void testEnter() throws InterruptedException
     {
         WebElement recherche = driver.findElement(By.id("lst-ib"));
-        recherche.sendKeys("france" + Keys.ENTER);
+        recherche.sendKeys("canelé" + Keys.ENTER);
         WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
-        Assert.assertEquals("République française - France — Wikipédia",premierResultat.getText());
+        Assert.assertEquals(premierResultat.getText(), "Recette de Canelés Bordelais rapides : la recette facile");
     }
 
 
@@ -44,11 +44,11 @@ public class SeleniumDest
     public void testClick() throws InterruptedException
     {
         WebElement recherche = driver.findElement(By.id("lst-ib"));
-        recherche.sendKeys("france");
+        recherche.sendKeys("canelé");
         recherche = driver.findElement(By.className("lsb"));
         recherche.click();
         WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
-        Assert.assertEquals("République française - France — Wikipédia", premierResultat.getText() );
+        Assert.assertEquals(premierResultat.getText(), "Recette de Canelés Bordelais rapides : la recette facile");
     }
 
     @Test
