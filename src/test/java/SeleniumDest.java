@@ -34,7 +34,7 @@ public class SeleniumDest
     {
         WebElement recherche = driver.findElement(By.id("lst-ib"));
         recherche.sendKeys("canelé" + Keys.ENTER);
-        WebElement premierResultat = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div/h3/a"));
+        WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
         Assert.assertEquals(premierResultat.getText(), "Recette de Canelés Bordelais rapides : la recette facile");
     }
 
@@ -46,7 +46,7 @@ public class SeleniumDest
         recherche.sendKeys("canelé");
         recherche = driver.findElement(By.className("lsb"));
         recherche.click();
-        WebElement premierResultat = driver.findElement(By.xpath("//*[@id=\"rso\"]/div[1]/div/div/div/h3/a"));
+        WebElement premierResultat = driver.findElement(By.cssSelector(".rc > .r > a"));
         Assert.assertEquals(premierResultat.getText(), "Recette de Canelés Bordelais rapides : la recette facile");
     }
 
